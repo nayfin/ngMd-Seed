@@ -1,0 +1,17 @@
+<md-toolbar color="primary" >
+  <div fxLayoutAlign="space-between center" fxFlexFill>
+    <div >{{ title }}</div>
+    <div>
+      <button md-icon-button [mdMenuTriggerFor]="menu">
+        <md-icon class="header-icon" >more_vert</md-icon>
+      </button>
+  
+      <md-menu #menu="mdMenu">
+        <button md-menu-item>
+          <md-icon>dialpad</md-icon>
+          <span>TODO</span>
+        </button>
+      </md-menu> 
+    </div>
+  </div>
+</md-toolbar>
