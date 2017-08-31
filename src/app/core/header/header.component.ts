@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +12,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 export class HeaderComponent implements OnInit {
   // TODO: make this an input
-  title = 'ngMd Seed';
+  @Input() title: string;
 
   // TODO: Import appRoutes after seperated into module, or create links service to provide to routes and header
 
