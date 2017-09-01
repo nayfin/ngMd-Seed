@@ -1,3 +1,4 @@
+import { InputComponent } from './../lib/forms/input/input.component';
 import { DesignModule } from './../modules/design.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -10,6 +11,7 @@ import { HeaderComponent } from './header/header.component';
   declarations: [
     HeaderComponent,
     HomeComponent,
+    InputComponent,
   ],
   imports: [
     AppRoutingModule,
