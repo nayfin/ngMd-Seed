@@ -1,6 +1,6 @@
 .home-container {
   margin: 16px;
 }
-md-card.home-card {
+mat-card.home-card {
   height: 5000px;
 }
