@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import 'hammerjs';
 // Internal Modules
 import { DesignModule } from './modules/design.module';
+import { AuthModule } from './auth/auth.module';
 import { CoreModule } from './core/core.module';
 // Routing
 import { AppRoutingModule } from './app-routing.module';
@@ -31,6 +32,7 @@ import { FormComponent } from './lib/forms/form/form.component';
     AppRoutingModule,
     DesignModule,
     CoreModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
