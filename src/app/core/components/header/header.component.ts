@@ -11,8 +11,9 @@ import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core
 export class HeaderComponent implements OnInit {
 
   @Input() title: string;
+  @Input() user: string;
   @Input() navLinks: { link: string, title: string }[];
-  
+
   constructor() { }
 
   ngOnInit() {

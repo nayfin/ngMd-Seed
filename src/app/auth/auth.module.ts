@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AuthMenuComponent } from './shared/components/auth-menu/auth-menu.component';
-import { SharedModule } from './shared/shared.module';
+import { AuthSharedModule } from './shared/shared.module';
 
 // third party modules
+import { DesignModule } from './../modules/design.module';
 import { AngularFireModule, FirebaseAppConfig } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { SigninDialogModule } from './signin-dialog/signin-dialog.module';
 
 export const firebaseConfig: FirebaseAppConfig = {
   apiKey: 'AIzaSyAfKGzC-xdoA363ipOKD69JdA6obGQxVPM',
@@ -20,12 +21,16 @@ export const firebaseConfig: FirebaseAppConfig = {
 @NgModule({
   imports: [
     CommonModule,
-    SharedModule,
+    DesignModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
-    SharedModule.forRoot()
+    AuthSharedModule.forRoot(),
+    SigninDialogModule,
   ],
-  declarations: [AuthMenuComponent]
+  declarations: [],
+  exports: [
+    AuthSharedModule,
+  ]
 })
 export class AuthModule { }

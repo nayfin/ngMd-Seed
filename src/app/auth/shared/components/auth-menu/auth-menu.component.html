@@ -1,3 +1,30 @@
-<p>
-  auth-menu works!
-</p>
+<div>
+  <button mat-icon-button [matMenuTriggerFor]="user ? userMenu : authMenu">
+    <mat-icon class="header-icon" >account_circle</mat-icon>
+  </button>
+
+  <mat-menu #userMenu="matMenu">
+    <button mat-menu-item>
+      <!-- <mat-icon>dialpad</mat-icon> -->
+      <span>Profile</span>
+    </button>
+    <button mat-menu-item>
+      <span>Signout</span>
+    </button>
+  </mat-menu> 
+
+  <mat-menu #authMenu="matMenu">
+    <button 
+      mat-menu-item 
+      (click)="openAuthDialog('signin')">
+      <mat-icon>input</mat-icon> 
+      <span>Signin</span>
+    </button>
+    <button 
+      mat-menu-item
+      (click)="openAuthDialog('register')">
+      <mat-icon>person_add</mat-icon>
+      <span>Register</span>
+    </button>
+  </mat-menu> 
+</div>

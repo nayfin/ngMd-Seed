@@ -1,17 +1,6 @@
 <mat-toolbar color="primary" >
   <div fxLayoutAlign="space-between center" fxFlexFill>
     <div >{{ title }}</div>
-    <div>
-      <button mat-icon-button [matMenuTriggerFor]="menu">
-        <mat-icon class="header-icon" >more_vert</mat-icon>
-      </button>
-  
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item>
-          <mat-icon>dialpad</mat-icon>
-          <span>TODO</span>
-        </button>
-      </mat-menu> 
-    </div>
+    <auth-menu [user]="user"></auth-menu>
   </div>
 </mat-toolbar>

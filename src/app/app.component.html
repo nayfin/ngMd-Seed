@@ -1,5 +1,10 @@
 <div fxLayout="column" fxFill>
-  <app-header [title]="title" fxLayout="row" fxFlex="64px"></app-header>
+  <app-header 
+    [title]="title"
+    [user]="user" 
+    fxLayout="row" 
+    fxFlex="80px">
+  </app-header>
   <div class="router-container" fxFlex> 
     <router-outlet></router-outlet>
   </div>

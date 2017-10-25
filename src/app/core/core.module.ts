@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './../app-routing.module';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
+import { AuthModule } from '../auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { HeaderComponent } from './components/header/header.component';
     AppRoutingModule,
     CommonModule,
     DesignModule,
+    AuthModule,
   ],
   exports: [
     AppRoutingModule,
