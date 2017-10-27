@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { MatDialog } from '@angular/material';
-import { SigninDialogComponent } from '../../../signin-dialog/containers/signin-dialog/signin-dialog.component';
+import { MatDialog, MatDialogRef } from '@angular/material';
+import { AuthDialogComponent } from '../../../auth-dialog/containers/auth-dialog/auth-dialog.component';
 
 @Component({
   selector: 'auth-menu',
@@ -9,22 +9,20 @@ import { SigninDialogComponent } from '../../../signin-dialog/containers/signin-
 })
 export class AuthMenuComponent {
 
-  data: any;
   @Input() user: string;
 
   constructor(
     public dialog: MatDialog,
   ) { }
 
-  openAuthDialog(type: string): void {
-    const dialogRef = this.dialog.open(SigninDialogComponent, {
+  openAuthDialog(method: string): void {
+    const dialogRef: MatDialogRef<AuthDialogComponent> = this.dialog.open(AuthDialogComponent, {
       width: '250px',
-      data: { type }
+      data: { authMethod: method }
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      this.data = result;
+      console.log('The dialog was closed and passed this data:', result);
     });
   }
 

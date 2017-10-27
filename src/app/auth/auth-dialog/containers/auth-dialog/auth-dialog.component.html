@@ -1,0 +1,14 @@
+<h2 mat-dialog-title>{{ authMethod | titlecase}}</h2>
+<mat-dialog-content>
+  <auth-form></auth-form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button
+    (click)="toggleAuthMethod()">{{ oppositeAuthMethod | uppercase }}</button>
+  <!-- Can optionally provide a result for the closing dialog. -->
+  <button 
+    mat-button 
+    mat-dialog-close>
+    {{ submitLabel | uppercase }}
+  </button>
+</mat-dialog-actions>

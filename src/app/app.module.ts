@@ -14,14 +14,10 @@ import { CoreModule } from './core/core.module';
 import { AppRoutingModule } from './app-routing.module';
 // App Components
 import { AppComponent } from './app.component';
-import { FormComponent } from './lib/forms/form/form.component';
-// import { InputComponent } from './lib/forms/input/input.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormComponent,
-    // InputComponent
   ],
   imports: [
     BrowserModule,

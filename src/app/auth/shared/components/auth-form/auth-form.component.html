@@ -1,3 +1,26 @@
-<p>
-  auth-form works!
-</p>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <ng-content select="h1"></ng-content>
+  
+  <mat-form-field>
+    <input
+      matInput
+      type="email"
+      placeholder="Email Address"
+      formControlName="email">
+    <mat-error *ngIf="emailFormat">
+      Invalid email format
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input
+      matInput
+      type="password"
+      placeholder="Enter password"
+      formControlName="password">
+    <mat-error *ngIf="passwordInvalid">
+      Password is required
+    </mat-error>
+  </mat-form-field>
+
+</form>

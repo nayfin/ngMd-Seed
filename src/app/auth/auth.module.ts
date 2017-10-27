@@ -7,7 +7,7 @@ import { DesignModule } from './../modules/design.module';
 import { AngularFireModule, FirebaseAppConfig } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { SigninDialogModule } from './signin-dialog/signin-dialog.module';
+import { AuthDialogModule } from './auth-dialog/auth-dialog.module';
 
 export const firebaseConfig: FirebaseAppConfig = {
   apiKey: 'AIzaSyAfKGzC-xdoA363ipOKD69JdA6obGQxVPM',
@@ -26,7 +26,7 @@ export const firebaseConfig: FirebaseAppConfig = {
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     AuthSharedModule.forRoot(),
-    SigninDialogModule,
+    AuthDialogModule,
   ],
   declarations: [],
   exports: [
