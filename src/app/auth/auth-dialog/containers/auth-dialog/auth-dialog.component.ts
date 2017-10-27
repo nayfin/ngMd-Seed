@@ -4,7 +4,7 @@ import { MatDialogRef, MatDialog, MatDialogContent, MAT_DIALOG_DATA } from '@ang
 @Component({
   selector: 'auth-dialog',
   templateUrl: './auth-dialog.component.html',
-  styleUrls: ['./auth-dialog.component.css']
+  styleUrls: ['./auth-dialog.component.scss']
 })
 export class AuthDialogComponent {
 
@@ -16,6 +16,9 @@ export class AuthDialogComponent {
 
   get submitLabel(): string {
     return this.authMethod === 'signin' ? 'Enter' : 'Create Account';
+  }
+  get linkLabel(): string {
+    return this.authMethod === 'signin' ? 'Not Registered?' : 'Already a member?'
   }
 
   constructor(
