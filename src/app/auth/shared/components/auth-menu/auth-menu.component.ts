@@ -1,11 +1,14 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
+
 import { MatDialog, MatDialogRef } from '@angular/material';
 import { AuthDialogComponent } from '../../../auth-dialog/containers/auth-dialog/auth-dialog.component';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'auth-menu',
   templateUrl: './auth-menu.component.html',
-  styleUrls: ['./auth-menu.component.css']
+  styleUrls: ['./auth-menu.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AuthMenuComponent {
 
@@ -13,6 +16,7 @@ export class AuthMenuComponent {
 
   constructor(
     public dialog: MatDialog,
+    private authService: AuthService
   ) { }
 
   openAuthDialog(method: string): void {
@@ -24,6 +28,12 @@ export class AuthMenuComponent {
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed and passed this data:', result);
     });
+  }
+
+  logOut() {
+    this.authService.logoutUser();
+    console.log("logged out:", this.user);
+    
   }
 
 }

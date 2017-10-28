@@ -20,6 +20,9 @@ export class AuthService {
         this.store.set('user', null);
         return;
       }
+
+      console.log("authState: ", authState);
+      
       const user: User = {
         email: authState.email,
         uid: authState.uid,

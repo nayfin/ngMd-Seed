@@ -14,6 +14,8 @@ import { CoreModule } from './core/core.module';
 import { AppRoutingModule } from './app-routing.module';
 // App Components
 import { AppComponent } from './app.component';
+// Store
+import { Store } from './store';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { AppComponent } from './app.component';
     CoreModule,
     AuthModule
   ],
-  providers: [],
+  providers: [
+    Store
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

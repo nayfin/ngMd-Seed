@@ -1,17 +1,33 @@
 <div>
-  <button mat-icon-button [matMenuTriggerFor]="user ? userMenu : authMenu">
+  <button 
+    *ngIf="user?.authenticated; else avatar"
+    mat-icon-button 
+    [matMenuTriggerFor]="userMenu">
     <mat-icon class="header-icon" >account_circle</mat-icon>
+    {{user?.authenticated}}
   </button>
 
   <mat-menu #userMenu="matMenu">
-    <button mat-menu-item>
-      <!-- <mat-icon>dialpad</mat-icon> -->
+    <button 
+      mat-menu-item>
       <span>Profile</span>
     </button>
-    <button mat-menu-item>
+    <button 
+      mat-menu-item
+      (click)="logOut()">
       <span>Signout</span>
     </button>
   </mat-menu> 
+
+  <ng-template  #avatar>
+    <button 
+      mat-icon-button 
+      [matMenuTriggerFor]="authMenu">
+      <mat-icon class="header-icon" >account_circle</mat-icon>
+      {{user?.authenticated}}
+    </button>
+
+  </ng-template>
 
   <mat-menu #authMenu="matMenu">
     <button 

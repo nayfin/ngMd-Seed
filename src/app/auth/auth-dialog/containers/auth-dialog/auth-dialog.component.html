@@ -3,18 +3,19 @@
   <hr>
 </h2>
 <mat-dialog-content>
-  <auth-form></auth-form>
+  <auth-form (submitted)="onSubmit($event)">
+    <button 
+      [type]="'submit'"
+      color="accent"
+      mat-raised-button>
+      {{ submitLabel | uppercase }}
+    </button>
+  </auth-form>
 </mat-dialog-content>
 <p class="change-method-link" (click)="toggleAuthMethod()">
   {{ linkLabel }}
 </p>
-<mat-dialog-actions align="end">
+<mat-error *ngIf="error">{{error}}</mat-error>
+<!-- <mat-dialog-actions align="end">
 
-  <!-- Can optionally provide a result for the closing dialog. -->
-  <button 
-    color="accent"
-    mat-raised-button
-    mat-dialog-close>
-    {{ submitLabel | uppercase }}
-  </button>
-</mat-dialog-actions>
+</mat-dialog-actions> -->

@@ -19,6 +19,7 @@ export class AuthFormComponent {
   constructor(private fb: FormBuilder) { }
 
   onSubmit() {
+    console.log('auth-form submitted');
     if (this.form.valid) {
       this.submitted.emit(this.form);
     }

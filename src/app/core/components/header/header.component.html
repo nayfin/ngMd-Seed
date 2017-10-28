@@ -1,6 +1,7 @@
 <mat-toolbar color="primary" >
   <div fxLayoutAlign="space-between center" fxFlexFill>
     <div >{{ title }}</div>
+    {{user?.authenticated}}
     <auth-menu [user]="user"></auth-menu>
   </div>
 </mat-toolbar>

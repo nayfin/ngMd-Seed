@@ -1,5 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MatDialog, MatDialogContent, MAT_DIALOG_DATA } from '@angular/material';
+import { AuthService } from '../../../shared/services/auth.service';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'auth-dialog',
@@ -9,6 +11,8 @@ import { MatDialogRef, MatDialog, MatDialogContent, MAT_DIALOG_DATA } from '@ang
 export class AuthDialogComponent {
 
   authMethod: string;
+  loggedIn = false;
+  error: string;
 
   get oppositeAuthMethod(): string {
     return this.authMethod === 'signin' ? 'register' : 'signin';
@@ -17,12 +21,14 @@ export class AuthDialogComponent {
   get submitLabel(): string {
     return this.authMethod === 'signin' ? 'Enter' : 'Create Account';
   }
+
   get linkLabel(): string {
-    return this.authMethod === 'signin' ? 'Not Registered?' : 'Already a member?'
+    return this.authMethod === 'signin' ? 'Not Registered?' : 'Already a member?';
   }
 
   constructor(
     public dialogRef: MatDialogRef<AuthDialogComponent>,
+    private authService: AuthService,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
     this.authMethod = data.authMethod;
@@ -31,8 +37,51 @@ export class AuthDialogComponent {
   toggleAuthMethod() {
     this.authMethod = this.oppositeAuthMethod;
   }
+
   onNoClick(): void {
     this.dialogRef.close();
+  }
+
+  onSubmit(form: FormGroup) {
+    const { email, password } = form.value;
+
+    switch (this.authMethod) {
+      case 'signin':
+        this.login(email, password);
+        break;
+      case 'register':
+        this.register(email, password);
+        break;
+
+    }
+
+
+  }
+
+  async login(email: string, password: string) {
+    try {
+      await this.authService.loginUser(email, password);
+      this.loggedIn = true;
+      this.dialogRef.close();
+      // this.router.navigate(['/']);
+    } catch (err) {
+      console.log(err);
+      this.error = err.message;
+    }
+    console.log('loggedIn', this.loggedIn);
+  }
+
+  async register(email: string, password: string) {
+    try {
+      await this.authService.createUser(email, password);
+      this.loggedIn = true;
+      this.dialogRef.close();
+      // this.router.navigate(['/']);
+    } catch (err) {
+      console.log(err);
+      this.error = err.message;
+    }
+    console.log('loggedIn', this.loggedIn);
   }
 
 }

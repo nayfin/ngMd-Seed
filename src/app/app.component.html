@@ -1,7 +1,7 @@
 <div fxLayout="column" fxFill>
   <app-header 
     [title]="title"
-    [user]="user" 
+    [user]="user$ | async" 
     fxLayout="row" 
     fxFlex="80px">
   </app-header>
