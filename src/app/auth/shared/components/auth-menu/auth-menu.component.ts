@@ -7,7 +7,7 @@ import { AuthService, User } from '../../services/auth.service';
 @Component({
   selector: 'auth-menu',
   templateUrl: './auth-menu.component.html',
-  styleUrls: ['./auth-menu.component.css'],
+  styleUrls: ['./auth-menu.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AuthMenuComponent {
