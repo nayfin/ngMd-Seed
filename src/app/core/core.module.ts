@@ -1,4 +1,4 @@
-import { InputComponent } from './../lib/forms/input/input.component';
+// import { InputComponent } from './../lib/forms/input/input.component';
 import { DesignModule } from './../modules/design.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -12,7 +12,7 @@ import { AuthModule } from '../auth/auth.module';
   declarations: [
     HeaderComponent,
     HomeComponent,
-    InputComponent,
+    // InputComponent,
   ],
   imports: [
     AppRoutingModule,

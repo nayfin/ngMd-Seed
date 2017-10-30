@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
+import { User } from '../../../auth/shared/services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +12,7 @@ import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core
 export class HeaderComponent implements OnInit {
 
   @Input() title: string;
-  @Input() user: string;
+  @Input() user: User;
   @Input() navLinks: { link: string, title: string }[];
 
   constructor() { }

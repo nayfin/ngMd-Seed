@@ -2,7 +2,7 @@ import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core
 
 import { MatDialog, MatDialogRef } from '@angular/material';
 import { AuthDialogComponent } from '../../../auth-dialog/containers/auth-dialog/auth-dialog.component';
-import { AuthService } from '../../services/auth.service';
+import { AuthService, User } from '../../services/auth.service';
 
 @Component({
   selector: 'auth-menu',
@@ -12,7 +12,7 @@ import { AuthService } from '../../services/auth.service';
 })
 export class AuthMenuComponent {
 
-  @Input() user: string;
+  @Input() user: User;
 
   constructor(
     public dialog: MatDialog,
