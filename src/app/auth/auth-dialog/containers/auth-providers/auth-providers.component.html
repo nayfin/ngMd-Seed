@@ -1,0 +1,11 @@
+<button
+  class="provider-button"
+  *ngFor="let provider of providers"
+  mat-raised-button
+  (click)="providerLogin(provider.name)">
+  <img 
+    class="provider-icon"
+    src="/assets/images/auth-providers/{{provider.name}}.png" 
+    alt="{{provider.name}} icon">
+  Use {{ provider.name | titlecase}} account
+</button>

@@ -3,6 +3,7 @@
   <hr>
 </h2>
 <mat-dialog-content>
+  <auth-providers (success)="closeDialog()" (error)="error = $event"></auth-providers>
   <auth-form (submitted)="onSubmit($event)">
     <button 
       [type]="'submit'"

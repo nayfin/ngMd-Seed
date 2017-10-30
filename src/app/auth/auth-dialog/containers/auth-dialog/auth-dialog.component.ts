@@ -11,7 +11,6 @@ import { FormGroup } from '@angular/forms';
 export class AuthDialogComponent {
 
   authMethod: string;
-  loggedIn = false;
   error: string;
 
   get oppositeAuthMethod(): string {
@@ -39,7 +38,7 @@ export class AuthDialogComponent {
   }
 
   onNoClick(): void {
-    this.dialogRef.close();
+    this.closeDialog();
   }
 
   onSubmit(form: FormGroup) {
@@ -52,36 +51,33 @@ export class AuthDialogComponent {
       case 'register':
         this.register(email, password);
         break;
-
     }
+  }
 
-
+  closeDialog() {
+    this.dialogRef.close();
   }
 
   async login(email: string, password: string) {
     try {
       await this.authService.loginUser(email, password);
-      this.loggedIn = true;
-      this.dialogRef.close();
+      this.closeDialog();
       // this.router.navigate(['/']);
     } catch (err) {
       console.log(err);
       this.error = err.message;
     }
-    console.log('loggedIn', this.loggedIn);
   }
 
   async register(email: string, password: string) {
     try {
       await this.authService.createUser(email, password);
-      this.loggedIn = true;
-      this.dialogRef.close();
+      this.closeDialog();
       // this.router.navigate(['/']);
     } catch (err) {
       console.log(err);
       this.error = err.message;
     }
-    console.log('loggedIn', this.loggedIn);
   }
 
 }

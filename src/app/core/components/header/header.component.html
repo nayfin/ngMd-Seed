@@ -1,7 +1,11 @@
 <mat-toolbar color="primary" >
   <div fxLayoutAlign="space-between center" fxFlexFill>
     <div >{{ title }}</div>
-    {{user?.authenticated}}
-    <auth-menu [user]="user"></auth-menu>
+    
+    <!-- TODO: replace inline style with flexLayout or class -->
+    <div style="display: flex">
+        {{user?.displayName || user?.email}}
+      <auth-menu [user]="user"></auth-menu>
+    </div>
   </div>
 </mat-toolbar>

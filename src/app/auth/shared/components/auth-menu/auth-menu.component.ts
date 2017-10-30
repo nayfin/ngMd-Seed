@@ -31,9 +31,11 @@ export class AuthMenuComponent {
   }
 
   logOut() {
-    this.authService.logoutUser();
-    console.log("logged out:", this.user);
-    
+    this.authService.logoutUser().then( (value) => {
+      setTimeout(() => {
+        console.log('logged out:', value, 'this.user:', this.user);
+      }, 500);
+    } );
   }
 
 }

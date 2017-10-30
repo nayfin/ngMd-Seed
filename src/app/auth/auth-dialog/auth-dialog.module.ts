@@ -5,6 +5,8 @@ import { DesignModule } from '../../modules/design.module';
 import { AuthSharedModule } from '../shared/shared.module';
 // components
 import { AuthDialogComponent } from './containers/auth-dialog/auth-dialog.component';
+import { AuthProvidersComponent } from './containers/auth-providers/auth-providers.component';
+import { AuthProviderComponent } from './components/auth-provider/auth-provider.component';
 
 @NgModule({
   imports: [
@@ -13,7 +15,9 @@ import { AuthDialogComponent } from './containers/auth-dialog/auth-dialog.compon
     AuthSharedModule,
   ],
   declarations: [
-    AuthDialogComponent
+    AuthDialogComponent,
+    AuthProvidersComponent,
+    AuthProviderComponent
   ],
   exports: [
     AuthDialogComponent
