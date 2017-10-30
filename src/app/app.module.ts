@@ -10,12 +10,14 @@ import 'hammerjs';
 import { DesignModule } from './modules/design.module';
 import { AuthModule } from './auth/auth.module';
 import { CoreModule } from './core/core.module';
+
 // Routing
 import { AppRoutingModule } from './app-routing.module';
 // App Components
 import { AppComponent } from './app.component';
 // Store
 import { Store } from './store';
+import { HomeModule } from './home/home.module';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,7 @@ import { Store } from './store';
     AppRoutingModule,
     DesignModule,
     CoreModule,
+    HomeModule,
     AuthModule
   ],
   providers: [
