@@ -1,4 +1,4 @@
-import { Store } from 'store';
+import { Store } from 'tft-store';
 import { Injectable } from '@angular/core';
 import * as firebase from 'firebase/app';
 import { AngularFireAuth } from 'angularfire2/auth';

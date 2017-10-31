@@ -1,7 +1,10 @@
 <mat-toolbar color="primary" >
   <div fxLayoutAlign="space-between center" fxFlexFill>
-    <div >{{ title }}</div>
     
+    <div
+      style="cursor: pointer"
+      [routerLink]="['home']">{{ title }}
+    </div>
     <!-- TODO: replace inline style with flexLayout or class -->
     <div style="display: flex">
         {{user?.displayName || user?.email}}

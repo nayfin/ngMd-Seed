@@ -2,7 +2,7 @@ import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core
 
 import { MatDialog, MatDialogRef } from '@angular/material';
 import { AuthDialogComponent } from '../../../auth-dialog/containers/auth-dialog/auth-dialog.component';
-import { AuthService, User } from '../../services/auth.service';
+import { AuthService, User } from 'tft-auth';
 
 @Component({
   selector: 'auth-menu',
@@ -21,7 +21,7 @@ export class AuthMenuComponent {
 
   openAuthDialog(method: string): void {
     const dialogRef: MatDialogRef<AuthDialogComponent> = this.dialog.open(AuthDialogComponent, {
-      width: '250px',
+      width: '350px',
       data: { authMethod: method }
     });
 
