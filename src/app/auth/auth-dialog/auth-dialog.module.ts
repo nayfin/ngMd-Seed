@@ -20,7 +20,9 @@ import { AuthProviderComponent } from './components/auth-provider/auth-provider.
     AuthProviderComponent
   ],
   exports: [
-    AuthDialogComponent
+    AuthDialogComponent,
+    AuthProvidersComponent,
+    AuthProviderComponent
   ],
   entryComponents: [
     AuthDialogComponent

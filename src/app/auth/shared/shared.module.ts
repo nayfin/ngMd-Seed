@@ -9,12 +9,12 @@ import { AuthMenuComponent } from './components/auth-menu/auth-menu.component';
 // services
 import { AuthService } from './services/auth.service';
 // guards
-import { AuthGuard } from 'tft-auth';
-import { AppRoutingModule } from '../../app-routing.module';
+import { AuthGuard } from './guards/auth.guard';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
-    AppRoutingModule,
+    RouterModule,
     CommonModule,
     ReactiveFormsModule,
     DesignModule,

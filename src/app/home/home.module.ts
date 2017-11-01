@@ -10,6 +10,9 @@ import { DesignModule } from '../modules/design.module';
   ],
   declarations: [
     HomeComponent
+  ],
+  exports: [
+    HomeComponent
   ]
 })
 export class HomeModule { }

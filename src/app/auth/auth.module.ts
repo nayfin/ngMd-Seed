@@ -8,7 +8,6 @@ import { AngularFireModule, FirebaseAppConfig } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AuthDialogModule } from './auth-dialog/auth-dialog.module';
-import { AppRoutingModule } from '../app-routing.module';
 
 export const firebaseConfig: FirebaseAppConfig = {
   apiKey: 'AIzaSyAfKGzC-xdoA363ipOKD69JdA6obGQxVPM',
@@ -21,7 +20,6 @@ export const firebaseConfig: FirebaseAppConfig = {
 
 @NgModule({
   imports: [
-    AppRoutingModule,
     CommonModule,
     DesignModule,
     AngularFireModule.initializeApp(firebaseConfig),
