@@ -1,5 +1,5 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
-  <mat-form-field>
+  <mat-form-field fxFlexFill>
     <input
       matInput
       type="email"
@@ -10,7 +10,7 @@
     </mat-error>
   </mat-form-field>
 
-  <mat-form-field>
+  <mat-form-field fxFlexFill>
     <input
       matInput
       type="password"
@@ -21,6 +21,8 @@
     </mat-error>
   </mat-form-field>
 
-  <ng-content select="button"></ng-content>
+  <div fxLayoutAlign="end center">
+    <ng-content select="button"></ng-content>
+  </div>
 
 </form>

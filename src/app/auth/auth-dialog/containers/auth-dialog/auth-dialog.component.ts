@@ -31,6 +31,7 @@ export class AuthDialogComponent {
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
     this.authMethod = data.authMethod;
+    this.error = data.noAuthMessage;
   }
 
   toggleAuthMethod() {
