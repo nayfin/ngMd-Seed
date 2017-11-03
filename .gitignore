@@ -8,6 +8,9 @@
 # Sandbox: we don't want this getting pulled into projects
 /src/app/sandbox
 
+# config files
+/src/app/auth/firebase.conf.ts
+
 # dependencies
 /node_modules
 
