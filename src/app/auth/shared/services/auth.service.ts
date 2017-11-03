@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import * as firebase from 'firebase/app';
 import { AngularFireAuth } from 'angularfire2/auth';
 
-import 'rxjs/add/operator/do';
+import { tap } from 'rxjs/operators';
 
 export interface User {
   displayName?: string;
@@ -17,8 +17,8 @@ export interface User {
 
 export class AuthService {
 
-  auth$ = this.afAuth.authState
-    .do( authState => {
+  auth$ = this.afAuth.authState.pipe(
+    tap( authState => {
       if ( !authState ) {
         this.store.set('user', null);
         return;
@@ -34,7 +34,9 @@ export class AuthService {
         authenticated: true
       };
       this.store.set('user', user);
-    });
+    })
+
+  );
 
   constructor(
     private store: Store,

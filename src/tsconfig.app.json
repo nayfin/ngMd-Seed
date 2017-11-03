@@ -12,6 +12,7 @@
       "tft-home": ["app/home/index.ts"],
       "tft-design": ["app/modules/design.module.ts"]
     },
+    "preserveWhitespaces": false,
     "module": "es2015",
     "types": [] 
   },

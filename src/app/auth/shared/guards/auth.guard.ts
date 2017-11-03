@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router, CanActivate } from '@angular/router';
-import 'rxjs/add/operator/map';
+import { map } from 'rxjs/operators';
 
 import { AuthService } from '../services/auth.service';
 import { MatDialogRef, MatDialog } from '@angular/material';
