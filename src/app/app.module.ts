@@ -16,7 +16,7 @@ import { CoreModule } from 'tft-core';
 // Routing
 import { AppRoutingModule } from './app-routing.module';
 import { HomeModule } from './home/home.module';
-import { UserProfileModule } from './user-profile/user-profile.module';
+// import { UserProfileModule } from './user-profile/user-profile.module';
 // App Components
 import { AppComponent } from './app.component';
 // Store
@@ -37,7 +37,7 @@ import { Store } from './store';
     CoreModule,
     HomeModule,
     AuthModule,
-    UserProfileModule,
+    // UserProfileModule,
   ],
   providers: [
     Store

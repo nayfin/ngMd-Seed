@@ -1,7 +1,9 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, ViewChild } from '@angular/core';
 import { MatDialogRef, MatDialog, MatDialogContent, MAT_DIALOG_DATA } from '@angular/material';
-import { AuthService } from '../../../shared/services/auth.service';
 import { FormGroup } from '@angular/forms';
+
+import { AuthService } from '../../../shared/services/auth.service';
+import { AuthFormComponent } from '../../../shared/components/auth-form/auth-form.component';
 
 @Component({
   selector: 'auth-dialog',
@@ -12,6 +14,8 @@ export class AuthDialogComponent {
 
   authMethod: string;
   error: string;
+
+  @ViewChild(AuthFormComponent) authFormComponent: AuthFormComponent;
 
   get oppositeAuthMethod(): string {
     return this.authMethod === 'signin' ? 'register' : 'signin';

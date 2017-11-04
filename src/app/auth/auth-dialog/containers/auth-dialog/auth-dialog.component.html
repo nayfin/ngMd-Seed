@@ -8,6 +8,7 @@
     <button 
       [type]="'submit'"
       color="accent"
+      [disabled]="authFormComponent.form.invalid"
       mat-raised-button>
       {{ submitLabel | uppercase }}
     </button>
@@ -17,6 +18,3 @@
   {{ linkLabel }}
 </p>
 <mat-error *ngIf="error">{{error}}</mat-error>
-<!-- <mat-dialog-actions align="end">
-
-</mat-dialog-actions> -->

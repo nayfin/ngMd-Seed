@@ -4,6 +4,7 @@ import * as firebase from 'firebase/app';
 import { AngularFireAuth } from 'angularfire2/auth';
 
 import { tap } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 export interface User {
   displayName?: string;
@@ -40,7 +41,8 @@ export class AuthService {
 
   constructor(
     private store: Store,
-    private afAuth: AngularFireAuth
+    private afAuth: AngularFireAuth,
+    private router: Router,
   ) {}
 
   get authState() {
@@ -67,6 +69,7 @@ export class AuthService {
 
   logoutUser() {
     this.store.set('user', null);
+    this.router.navigate(['home']);
     return this.afAuth.auth.signOut();
   }
 
