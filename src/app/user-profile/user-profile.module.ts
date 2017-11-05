@@ -6,6 +6,7 @@ import { DesignModule } from 'tft-design';
 import { UserProfileComponent } from './containers/user-profile/user-profile.component';
 import { EditUserProfileComponent } from './containers/edit-user-profile/edit-user-profile.component';
 import { UserProfileFormComponent } from './components/user-profile-form/user-profile-form.component';
+import { UserMenuComponent } from './containers/user-menu/user-menu.component';
 
 export const ROUTES: Routes = [
   { path: '', component: UserProfileComponent },
@@ -20,12 +21,14 @@ export const ROUTES: Routes = [
   declarations: [
     UserProfileComponent,
     EditUserProfileComponent,
-    UserProfileFormComponent
+    UserProfileFormComponent,
+    UserMenuComponent
   ],
   exports: [
     UserProfileComponent,
     EditUserProfileComponent,
-    UserProfileFormComponent
+    UserProfileFormComponent,
+    UserMenuComponent
   ]
 })
 export class UserProfileModule { }

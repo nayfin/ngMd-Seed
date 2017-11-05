@@ -3,7 +3,7 @@ import { MatDialogRef, MatDialog, MatDialogContent, MAT_DIALOG_DATA } from '@ang
 import { FormGroup } from '@angular/forms';
 
 import { AuthService } from '../../../shared/services/auth.service';
-import { AuthFormComponent } from '../../../shared/components/auth-form/auth-form.component';
+import { AuthFormComponent } from '../../components/auth-form/auth-form.component';
 
 @Component({
   selector: 'auth-dialog',

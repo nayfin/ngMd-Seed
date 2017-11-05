@@ -2,13 +2,13 @@ import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core
 
 import { MatDialog, MatDialogRef } from '@angular/material';
 import { AuthDialogComponent } from '../../../auth-dialog/containers/auth-dialog/auth-dialog.component';
-import { AuthService, User } from '../../services/auth.service';
+import { AuthService, User } from '../../../shared/services/auth.service';
 
 @Component({
-  selector: 'auth-menu',
+  selector: 'tft-auth-menu',
   templateUrl: './auth-menu.component.html',
   styleUrls: ['./auth-menu.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AuthMenuComponent {
 
@@ -16,7 +16,7 @@ export class AuthMenuComponent {
 
   constructor(
     public dialog: MatDialog,
-    private authService: AuthService
+    // private authService: AuthService
   ) { }
 
   openAuthDialog(method: string): void {
@@ -30,8 +30,8 @@ export class AuthMenuComponent {
     });
   }
 
-  logOut() {
-    this.authService.logoutUser();
-  }
+  // logOut() {
+  //   this.authService.logoutUser();
+  // }
 
 }

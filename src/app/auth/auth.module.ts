@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AuthSharedModule } from './shared/shared.module';
 
 // third party modules
 import { DesignModule } from './../modules/design.module';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { AuthDialogModule } from './auth-dialog/auth-dialog.module';
+
 import { firebaseConfig } from './firebase.conf';
+import { AuthDialogModule } from './auth-dialog/auth-dialog.module';
+import { AuthSharedModule } from './shared/shared.module';
+import { AuthMenuModule } from './auth-menu/auth-menu.module';
 
 @NgModule({
   imports: [
@@ -19,10 +21,12 @@ import { firebaseConfig } from './firebase.conf';
     AngularFireDatabaseModule,
     AuthSharedModule.forRoot(),
     AuthDialogModule,
+    AuthMenuModule,
   ],
   declarations: [],
   exports: [
-    AuthSharedModule,
+    // AuthSharedModule,
+    AuthMenuModule
   ]
 })
 export class AuthModule { }

@@ -1,0 +1,9 @@
+<tft-user-menu 
+  *ngIf="user?.authenticated; else authMenu" 
+  [user]="user">
+</tft-user-menu>
+
+<ng-template #authMenu>
+  <tft-auth-menu ></tft-auth-menu>
+</ng-template>
+ 
