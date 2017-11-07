@@ -1,0 +1,25 @@
+<p>
+ {{ user | json}}
+</p>
+
+<mat-card>
+  <mat-card-header>
+    <div mat-card-avatar>
+      <img 
+        [src]="user.photoURL">
+    </div>
+    <mat-card-title>{{user.displayName || "No saved display name"}}</mat-card-title>
+    <mat-card-subtitle>{{ user.email }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+
+  </mat-card-content>
+  <mat-card-actions align="end">
+    <button 
+      mat-button
+      [routerLink]="['edit']">
+      <mat-icon>mode_edit</mat-icon>
+      EDIT
+    </button>
+  </mat-card-actions>
+</mat-card>

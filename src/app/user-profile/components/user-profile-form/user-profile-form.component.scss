@@ -1,0 +1,8 @@
+.image-preview {
+  height: 500px;
+  max-width:  600px;
+  img {
+    height: inherit;
+    max-width: inherit;
+  }
+}

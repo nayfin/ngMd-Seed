@@ -26,12 +26,7 @@ export class AuthMenuComponent {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed and passed this data:', result);
+      // console.log('The dialog was closed and passed this data:', result);
     });
   }
-
-  // logOut() {
-  //   this.authService.logoutUser();
-  // }
-
 }

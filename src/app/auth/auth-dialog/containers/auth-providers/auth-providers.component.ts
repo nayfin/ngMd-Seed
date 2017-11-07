@@ -30,7 +30,6 @@ export class AuthProvidersComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log(this.providers);
   }
 
   async providerLogin(provider: string) {

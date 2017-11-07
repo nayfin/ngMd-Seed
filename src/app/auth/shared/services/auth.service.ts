@@ -7,9 +7,9 @@ import { tap } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
 export interface User {
+  uid: string;
   displayName?: string;
   email?: string;
-  uid: string;
   photoURL?: string;
   authenticated?: boolean;
 }
@@ -18,14 +18,12 @@ export interface User {
 
 export class AuthService {
 
-  auth$ = this.afAuth.authState.pipe(
+  auth$ = this.authState.pipe(
     tap( authState => {
       if ( !authState ) {
         this.store.set('user', null);
         return;
       }
-
-      console.log('authState: ', authState);
 
       const user: User = {
         displayName: authState.displayName,
@@ -52,6 +50,7 @@ export class AuthService {
   get user() {
     return this.afAuth.auth.currentUser;
   }
+
   createUser(email: string, password: string) {
     return this.afAuth.auth
       .createUserWithEmailAndPassword(email, password);

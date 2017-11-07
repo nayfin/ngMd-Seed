@@ -1,3 +1,36 @@
-<p>
-  user-profile-form works!
-</p>
+<mat-card>
+    <mat-card-header>
+      <mat-card-title> Edit Profile</mat-card-title>
+      <mat-card-subtitle></mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="image-preview">
+        <img [src]="this.profileForm.get('photoURL').value">
+      </div>
+      <form [formGroup]="profileForm" >
+
+        <mat-form-field>
+          <input 
+            matInput 
+            placeholder="Display name" 
+            formControlName="displayName">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input 
+              matInput 
+              placeholder="Avatar url" 
+              formControlName="photoURL">
+        </mat-form-field>
+
+      </form>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button 
+        mat-button
+        (click)="onSubmit()">
+        <mat-icon>done</mat-icon>
+        UPDATE
+      </button>
+    </mat-card-actions>
+  </mat-card>
