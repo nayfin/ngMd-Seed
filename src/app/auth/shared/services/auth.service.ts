@@ -5,14 +5,9 @@ import { AngularFireAuth } from 'angularfire2/auth';
 
 import { tap } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { User } from '../models/user.model';
 
-export interface User {
-  uid: string;
-  displayName?: string;
-  email?: string;
-  photoURL?: string;
-  authenticated?: boolean;
-}
+
 
 @Injectable()
 
@@ -24,14 +19,8 @@ export class AuthService {
         this.store.set('user', null);
         return;
       }
-
-      const user: User = {
-        displayName: authState.displayName,
-        email: authState.email,
-        uid: authState.uid,
-        photoURL: authState.photoURL,
-        authenticated: true
-      };
+      console.log(authState);
+      const user: User = User.fromJson(authState);
       this.store.set('user', user);
     })
 

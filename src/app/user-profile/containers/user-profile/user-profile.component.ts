@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
 import { Store } from 'tft-store';
-import { User, AuthService } from '../../../auth/shared/services/auth.service';
+import { User, AuthService } from 'tft-auth';
 import { Subscription } from 'rxjs/Subscription';
 
 @Component({

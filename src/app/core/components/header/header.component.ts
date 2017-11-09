@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
-import { User } from '../../../auth/shared/services/auth.service';
+import { User } from 'tft-auth';
 
 @Component({
   selector: 'app-header',

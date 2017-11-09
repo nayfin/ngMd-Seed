@@ -2,7 +2,8 @@ import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core
 
 import { MatDialog, MatDialogRef } from '@angular/material';
 import { AuthDialogComponent } from '../../../auth-dialog/containers/auth-dialog/auth-dialog.component';
-import { AuthService, User } from '../../../shared/services/auth.service';
+import { AuthService } from '../../../shared/services/auth.service';
+import { User } from '../../../shared/models/user.model';
 
 @Component({
   selector: 'tft-auth-menu',

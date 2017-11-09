@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { pluck, distinctUntilChanged } from 'rxjs/operators';
 
 // Types
-import { User } from './auth/shared/services/auth.service';
+import { User } from 'tft-auth';
 
 
 export interface State {

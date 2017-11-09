@@ -24,13 +24,14 @@ export class UserProfileService {
       await profile.updateProfile({ displayName, photoURL });
 
       // TODO: create a static fromJson method on type User to perform conversion
-      const user: User = {
-        displayName: profile.displayName,
-        photoURL: profile.photoURL,
-        uid: profile.uid,
-        email: profile.email,
-        authenticated: true
-      };
+      const user: User = User.fromJson(profile);
+      // {
+      //   displayName: profile.displayName,
+      //   photoURL: profile.photoURL,
+      //   uid: profile.uid,
+      //   email: profile.email,
+      //   authenticated: true
+      // };
       this.store.set('user', user);
 
     } catch ( err ) {
