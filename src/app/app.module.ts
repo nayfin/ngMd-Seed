@@ -11,6 +11,7 @@ import { DesignModule } from './modules/design.module';
 import { AuthModule } from './auth/auth.module';
 
 import { CoreModule } from 'tft-core';
+import { LibModule } from 'tft-library';
 
 
 // Routing
@@ -20,7 +21,7 @@ import { HomeModule } from './home/home.module';
 // App Components
 import { AppComponent } from './app.component';
 // Store
-import { Store } from './store';
+import { Store } from 'tft-store';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { Store } from './store';
     CoreModule,
     HomeModule,
     AuthModule,
+    LibModule.forRoot(),
     // UserProfileModule,
   ],
   providers: [

@@ -10,6 +10,7 @@ import { UserProfileFormComponent } from './components/user-profile-form/user-pr
 import { UserMenuComponent } from './containers/user-menu/user-menu.component';
 import { UserCardComponent } from './components/user-card/user-card.component';
 import { UserProfileService } from './services/user-profile.service';
+import { LibModule } from '../lib/index';
 
 export const ROUTES: Routes = [
   { path: '', component: UserProfileComponent },
@@ -21,6 +22,7 @@ export const ROUTES: Routes = [
     CommonModule,
     DesignModule,
     ReactiveFormsModule,
+    LibModule,
     RouterModule.forChild(ROUTES),
   ],
   declarations: [

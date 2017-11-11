@@ -12,7 +12,7 @@ import { User, AuthService } from 'tft-auth';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit, OnDestroy {
-  title = 'Seed Title';
+  title = 'SEED';
 
   user$: Observable<User>;
 
