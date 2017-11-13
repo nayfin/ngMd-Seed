@@ -16,7 +16,8 @@ export class UploadFormComponent {
   constructor(private upSvc: UploadService) { }
 
   detectFiles(event) {
-      this.selectedFiles = event.target.files;
+    this.selectedFiles = event.target.files;
+    this.uploadSingle('test');
   }
   uploadSingle( path: string ) {
     const file = this.selectedFiles.item(0);

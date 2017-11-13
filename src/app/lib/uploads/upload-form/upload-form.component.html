@@ -9,21 +9,20 @@ mat-raised-button
 <input hidden type="file" #imgFileInput (change)="detectFiles($event)"/> 
 
 
-<button
-mat-raised-button
-[disabled]="!selectedFiles"
-(click)="uploadSingle('test')">
-Upload Single
-</button>
+<!-- <button
+  mat-raised-button
+  [disabled]="!selectedFiles"
+  (click)="uploadSingle('test')">
+  Upload Single
+</button> -->
 
-<div *ngIf="currentUpload">
-  <div class="progress">
-    <div class="progress-bar progress-bar-animated" [ngStyle]="{ 'width': currentUpload?.progress + '%' }"></div>
-  </div>
+<!-- <div *ngIf="currentUpload"> -->
+<div>
   Progress: {{currentUpload?.name}} | {{currentUpload?.progress}}% Complete
   <mat-progress-bar
     color="primary"
     mode="determinate"
-    [value]="currentUpload?.progress">
+    [value]="currentUpload?.progress"
+    [matTooltip]="currentUpload?.progress || 0">
   </mat-progress-bar>
 </div>
