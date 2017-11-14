@@ -7,7 +7,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 
-import { firebaseConfig } from './firebase.conf';
+import { environment } from '../../environments/environment';
 import { AuthDialogModule } from './auth-dialog/auth-dialog.module';
 import { AuthSharedModule } from './shared/shared.module';
 import { AuthMenuModule } from './auth-menu/auth-menu.module';
@@ -16,7 +16,7 @@ import { AuthMenuModule } from './auth-menu/auth-menu.module';
   imports: [
     CommonModule,
     DesignModule,
-    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     AuthSharedModule.forRoot(),
