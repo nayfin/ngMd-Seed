@@ -1,11 +1,9 @@
 
 
 
-<button 
-mat-raised-button
-(click)="imgFileInput.click()">
-<mat-icon>file_upload</mat-icon> SELECT FILE
-</button> 
+<img 
+  [src]="'/assets/images/system/file-bucket.png'"
+  (click)="imgFileInput.click()">
 <input hidden type="file" #imgFileInput (change)="detectFiles($event)"/> 
 
 
