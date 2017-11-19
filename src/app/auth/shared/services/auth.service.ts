@@ -2,8 +2,9 @@ import { Store } from 'tft-store';
 import { Injectable } from '@angular/core';
 import * as firebase from 'firebase/app';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireDatabase } from 'angularfire2/database';
 
-import { tap } from 'rxjs/operators';
+import { tap, switchMap, flatMap, map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { User } from '../models/user.model';
 
@@ -19,16 +20,23 @@ export class AuthService {
         this.store.set('user', null);
         return;
       }
-      console.log(authState);
+      
+      console.log('authState', authState);
       const user: User = User.fromJson(authState);
       this.store.set('user', user);
+      console.log('user:', user);
+      // return authState
     })
+    // map((authState: User) => {
+    //   this.db.object(`users/${authState.uid}/roles`)
+    // })
 
   );
 
   constructor(
     private store: Store,
     private afAuth: AngularFireAuth,
+    private db: AngularFireDatabase,
     private router: Router,
   ) {}
 
