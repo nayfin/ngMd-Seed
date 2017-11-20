@@ -6,7 +6,9 @@ import { AngularFireDatabase } from 'angularfire2/database';
 
 import { tap, switchMap, flatMap, map } from 'rxjs/operators';
 import { Router } from '@angular/router';
-import { User } from '../models/user.model';
+import { User, Roles } from '../models/user.model';
+import { switchMapTo } from 'rxjs/operators/switchMapTo';
+import { Observable } from 'rxjs/Observable';
 
 
 
@@ -15,22 +17,18 @@ import { User } from '../models/user.model';
 export class AuthService {
 
   auth$ = this.authState.pipe(
-    tap( authState => {
-      if ( !authState ) {
+    switchMap((state) => {
+      if ( !state ) {
         this.store.set('user', null);
-        return;
+        return Observable.of(null);
       }
-      
-      console.log('authState', authState);
-      const user: User = User.fromJson(authState);
-      this.store.set('user', user);
-      console.log('user:', user);
-      // return authState
+      return this.db.object(`users/${state.uid}/roles`).valueChanges()
+        .map( (roles: Roles) => {
+          const user: User = User.fromJson(state, roles);
+          this.store.set('user', user);
+          return user;
+        });
     })
-    // map((authState: User) => {
-    //   this.db.object(`users/${authState.uid}/roles`)
-    // })
-
   );
 
   constructor(
