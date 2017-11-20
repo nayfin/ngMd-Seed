@@ -22,12 +22,7 @@ export class AuthService {
         this.store.set('user', null);
         return Observable.of(null);
       }
-      return this.db.object(`users/${state.uid}/roles`).valueChanges()
-        .map( (roles: Roles) => {
-          const user: User = User.fromJson(state, roles);
-          this.store.set('user', user);
-          return user;
-        });
+      return this.extendRolesToUser(state);
     })
   );
 
@@ -67,6 +62,17 @@ export class AuthService {
     return this.afAuth.auth.signOut();
   }
 
+  extendRolesToUser(state) {
+    
+    console.log('state:', state);
+    
+    return this.db.object(`users/${state.uid}/roles`).valueChanges()
+      .map( (roles: Roles) => {
+        const user: User = User.fromJson(state, roles);
+        this.store.set('user', user);
+        return user;
+      });
+  }
   getProviderMethod(provider: string) {
     switch (provider) {
       case 'google':
@@ -74,6 +80,6 @@ export class AuthService {
       case 'facebook':
       return new firebase.auth.FacebookAuthProvider();
     }
-  }
+  } 
 
 }
