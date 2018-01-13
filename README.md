@@ -6,6 +6,9 @@
 
 - update name in package.json
 - update project.name in angular-cli.json
+- update name, short_name in manifest.json
+- update title, meta.keywords and meta.desctiption in index.html
+- update favicon
 - run firebase init to configure firebase
 - set firebase config in environments
 - set algolia config in environments
@@ -17,7 +20,9 @@
     - turn on Facebook auth in firebase console
     - configure Facebook on
 
+## Roadmap
 
+- Scripts to perform most of the configuration changes
 
 ## Development server
 
