@@ -1,18 +1,23 @@
-# ngMdSeed
+# Tortilla Flat Technology Seed
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.0
+### A good place to start if you want to use Angular Material, Firebase, and Algolia
 
-## Firebase Configuration
+## Steps to configure for new app
 
-Create file `firebase.conf.ts` adjacent to `src/app/auth/auth.module.ts`
+- update name in package.json
+- update project.name in angular-cli.json
+- run firebase init to configure firebase
+- set firebase config in environments
+- set algolia config in environments
+- turn on google auth in firebase console
 
-```javascript
-import { AngularFireModule, FirebaseAppConfig } from 'angularfire2';
+### Optional
 
-export const firebaseConfig: FirebaseAppConfig = {
-    // Paste firebase config object here
-};
-```
+- Facebook
+    - turn on Facebook auth in firebase console
+    - configure Facebook on
+
+
 
 ## Development server
 
