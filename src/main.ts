@@ -12,7 +12,7 @@ platformBrowserDynamic().bootstrapModule(AppModule)
   .then(() => {
     if ('serviceWorker' in navigator && environment.production ) {
       console.log('running service worker');
-      navigator.serviceWorker.register('/worker-basic.min.js');
+      navigator.serviceWorker.register('/ngsw-worker.js');
     }
   });
 

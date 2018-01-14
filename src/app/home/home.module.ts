@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './containers/home/home.component';
-import { DesignModule } from '../modules/design.module';
+import { DesignModule } from 'tft-library';
 
 @NgModule({
   imports: [

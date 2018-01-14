@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 import { AuthMenuComponent } from './containers/auth-menu/auth-menu.component';
-import { DesignModule } from 'tft-design';
+import { DesignModule } from 'tft-library';
 
 @NgModule({
   imports: [

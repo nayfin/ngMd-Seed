@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 
 // modules
-import { DesignModule } from '../../modules/design.module';
+import { DesignModule } from 'tft-library';
 import { AuthSharedModule } from '../shared/shared.module';
 // components
 import { AuthDialogComponent } from './containers/auth-dialog/auth-dialog.component';

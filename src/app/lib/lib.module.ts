@@ -4,7 +4,7 @@ import { FormComponent } from './forms/form/form.component';
 import { InputComponent } from './forms/input/input.component';
 import { UploadFormComponent } from './uploads/upload-form/upload-form.component';
 import { UploadService } from './uploads/upload.service';
-import { DesignModule } from '../modules/design.module';
+import { DesignModule } from 'tft-library';
 
 @NgModule({
   imports: [

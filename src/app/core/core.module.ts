@@ -1,4 +1,4 @@
-import { DesignModule } from './../modules/design.module';
+import { DesignModule } from 'tft-library';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 

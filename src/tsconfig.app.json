@@ -8,7 +8,7 @@
       "tft-core": ["app/core/index.ts"],
       "tft-auth": ["app/auth/index.ts"],
       "tft-user-profile": ["app/user-profile/index.ts"],
-      "tft-library": ["app/lib/index.ts"],
+      "app-library": ["app/lib/index.ts"],
       "tft-home": ["app/home/index.ts"],
       "tft-design": ["app/modules/design.module.ts"]
     },
